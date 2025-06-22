@@ -1,0 +1,103 @@
+<div class="container py-3">
+  <div class="card shadow-lg border-0">
+    <div class="card-body">
+      <h2 class="text-center mb-4 d-flex align-items-center justify-content-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-box-seam-fill text-primary" viewBox="0 0 16 16">
+          <path d="M9.828.122a1 1 0 0 0-1.656 0L1.173 5.586A1 1 0 0 0 1 6.293V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6.293a1 1 0 0 0-.173-.707L9.828.122zM2 6.707 7.646 2.04a.5.5 0 0 1 .708 0L14 6.707V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6.707z"/>
+        </svg>
+        Lista de Productos
+      </h2>
+
+      <!-- DASHBOARD INDICADORES -->
+      <div class="row text-center mb-4 g-2">
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #e0c3fc, #8ec5fc);">
+            <h6 class="text-muted mb-1">Total Productos</h6>
+            <h4 class="text-primary">{{ productos.length }}</h4>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #e0c3fc, #8ec5fc);">
+            <h6 class="text-muted mb-1">Stock Total</h6>
+            <h4 class="text-primary">{{ stockTotal }}</h4>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #e0c3fc, #8ec5fc);">
+            <h6 class="text-muted mb-1">Stock Crítico</h6>
+            <h4 class="text-danger">{{ stockCritico }}</h4>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded shadow-sm" style="background: linear-gradient(135deg, #e0c3fc, #8ec5fc);">
+            <h6 class="text-muted mb-1">Categorías</h6>
+            <h4 class="text-primary">{{ totalCategorias }}</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILTROS -->
+      <div class="row g-2 mb-3">
+        <div class="col-md-3">
+          <input type="text" [(ngModel)]="filtro.nombre" class="form-control" placeholder="Filtrar por nombre">
+        </div>
+        <div class="col-md-2">
+          <input type="number" [(ngModel)]="filtro.stock" class="form-control" placeholder="Stock mínimo">
+        </div>
+        <div class="col-md-2">
+          <input type="number" [(ngModel)]="filtro.precio" class="form-control" placeholder="Precio máx. venta">
+        </div>
+        <div class="col-md-2">
+          <input type="number" [(ngModel)]="filtro.categoriaId" class="form-control" placeholder="ID Categoría">
+        </div>
+        <div class="col-md-3">
+          <button class="btn btn-outline-secondary w-100" (click)="resetFiltro()">Limpiar filtros</button>
+        </div>
+      </div>
+
+      <!-- TABLA -->
+      <div *ngIf="productosFiltrados().length > 0; else sinProductos">
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped table-hover align-middle shadow-sm">
+            <thead class="table-primary text-center">
+              <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio Compra</th>
+                <th>Precio Venta</th>
+                <th>Stock</th>
+                <th>ID Categoría</th>
+                <th>ID Proveedor</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let producto of productosFiltrados()">
+                <td class="fw-semibold text-primary">{{ producto.nombre }}</td>
+                <td class="text-muted">{{ producto.descripcion }}</td>
+                <td class="text-end">S/ {{ producto.precioCompra | number:'1.2-2' }}</td>
+                <td class="text-end">S/ {{ producto.precioVenta | number:'1.2-2' }}</td>
+                <td class="text-center">{{ producto.stock }}</td>
+                <td class="text-center">{{ producto.categoriaId }}</td>
+                <td class="text-center">{{ producto.proveedorId }}</td>
+                <td class="text-end">
+                  <a class="btn btn-sm btn-outline-primary me-2" [routerLink]="['/productos/editar', producto.id]">
+                    <i class="bi bi-pencil-fill"></i> Editar
+                  </a>
+                  <button class="btn btn-sm btn-outline-danger" (click)="eliminarProducto(producto)">
+                    <i class="bi bi-trash-fill"></i> Eliminar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <ng-template #sinProductos>
+        <p class="text-muted fst-italic text-center">No hay productos disponibles con esos filtros.</p>
+      </ng-template>
+
+    </div>
+  </div>
+</div>

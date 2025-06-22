@@ -1,0 +1,31 @@
+<div class="main-content">
+  <div class="form-container">
+    <div class="form-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3 7.5V3h4.5l13.5 13.5-4.5 4.5L3 7.5zm3.5-.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+      </svg>
+    </div>
+    <h2>Crear Categoría</h2>
+
+    <form [formGroup]="categoriaForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nombre">Nombre de categoría:</label>
+        <input 
+          id="nombre" 
+          type="text" 
+          formControlName="nombre" 
+          placeholder="Ejemplo: Abarrotes, Bebidas, Lácteos" />
+      </div>
+
+      <div class="form-group">
+        <label for="descripcion">Descripción:</label>
+        <textarea 
+          id="descripcion" 
+          formControlName="descripcion" 
+          placeholder="Ejemplo: Productos no perecibles como arroz, azúcar y conservas."></textarea>
+      </div>
+
+      <button type="submit" [disabled]="categoriaForm.invalid">Guardar</button>
+    </form>
+  </div>
+</div>

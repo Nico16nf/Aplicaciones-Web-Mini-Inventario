@@ -1,0 +1,60 @@
+<nav class="navbar">
+  <div class="nav-header">
+    <!-- Icono SVG Minimarket -->
+    <div class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3 6l1-3h16l1 3h3v2h-2l-1.6 10.8a2 2 0 01-2 1.7H6.6a2 2 0 01-2-1.7L3 8H1V6h2zm2.6 12h12.8l1.4-9H4.2l1.4 9zM8 10h2v6H8v-6zm4 0h2v6h-2v-6z"/>
+      </svg>
+    </div>
+
+    <h1 class="nav-title">Inventario</h1>
+    <div class="nav-subtitle">Desarrollado por <strong>Nico & Luis</strong></div>
+  </div>
+
+  <ul class="nav-list">
+    <li (click)="navigateTo('/inicio')">
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M3 9.5l9-7 9 7V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V9.5z"/>
+        </svg>
+      </span>
+      Inicio
+    </li>
+    <li class="dropdown">
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M4 4h6v6H4V4zm0 10h6v6H4v-6zm10-10h6v6h-6V4zm0 10h6v6h-6v-6z"/>
+        </svg>
+      </span>
+      Categorías
+      <ul class="dropdown-menu">
+        <li (click)="navigateTo('/categorias/crear')">🞤 Crear</li>
+        <li (click)="navigateTo('/categorias/listar')">📄 Listar</li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M21 6.5l-9-5-9 5v11l9 5 9-5v-11zm-9 1l7.53 4.2-7.53 4.2-7.53-4.2L12 7.5z"/>
+        </svg>
+      </span>
+      Productos
+      <ul class="dropdown-menu">
+        <li (click)="navigateTo('/productos/crear')">🞤 Agregar Producto</li>
+        <li (click)="navigateTo('/productos/listar')">📄 Listar</li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M3 4h13v10h-13V4zm0 12h1a2 2 0 1 1-1 0zm13 0h1a2 2 0 1 1-1 0zm-11 0h9v2h-9v-2zm11-10h4l3 4v8h-7V6z"/>
+        </svg>
+      </span>
+      Proveedores
+      <ul class="dropdown-menu">
+        <li (click)="navigateTo('/proveedores/crear')">🞤 Agregar Proveedor</li>
+        <li (click)="navigateTo('/proveedores/listar')">📄 Listar</li>
+      </ul>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,60 @@
+<div class="container py-4">
+  <div class="card shadow-lg border-0 custom-card">
+    <div class="card-body">
+      <h2 class="text-center mb-4 d-flex align-items-center justify-content-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-pencil-square text-success" viewBox="0 0 16 16">
+          <path d="M15.502 1.94a.5.5 0 0 1 0 .706l-1 1L13 2.5l1-1a.5.5 0 0 1 .707 0l.795.795zM13.5 3.5l-10 10V14h.5l10-10-.5-.5z"/>
+          <path fill-rule="evenodd" d="M1 13.5V16h2.5L14 5.5l-2.5-2.5L1 13.5zm1 0L12.5 3 13 3.5 3.5 13H2v-.5z"/>
+        </svg>
+        Editar Producto
+      </h2>
+
+      <form (ngSubmit)="actualizarProducto()" *ngIf="producto" #productoForm="ngForm">
+        <div class="mb-3">
+          <label class="form-label fw-bold">Nombre</label>
+          <input type="text" class="form-control form-control-lg" [(ngModel)]="producto.nombre" name="nombre" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">Descripción</label>
+          <textarea class="form-control form-control-lg" [(ngModel)]="producto.descripcion" name="descripcion" rows="3"></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label fw-bold">Precio Compra</label>
+            <input type="number" step="0.01" class="form-control form-control-lg" [(ngModel)]="producto.precioCompra" name="precioCompra" required>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label fw-bold">Precio Venta</label>
+            <input type="number" step="0.01" class="form-control form-control-lg" [(ngModel)]="producto.precioVenta" name="precioVenta" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">Stock</label>
+          <input type="number" class="form-control form-control-lg" [(ngModel)]="producto.stock" name="stock" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">ID Categoría</label>
+          <input type="number" class="form-control form-control-lg" [(ngModel)]="producto.categoriaId" name="categoriaId" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-bold">ID Proveedor</label>
+          <input type="number" class="form-control form-control-lg" [(ngModel)]="producto.proveedorId" name="proveedorId" required>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-lg btn-success px-4" [disabled]="productoForm.invalid">
+            Actualizar
+          </button>
+        </div>
+      </form>
+
+      <p *ngIf="!producto" class="text-muted fst-italic text-center">Cargando producto...</p>
+    </div>
+  </div>
+</div>

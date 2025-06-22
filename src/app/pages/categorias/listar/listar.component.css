@@ -1,0 +1,54 @@
+.container {
+  background: #f9f9f9;
+  min-height: calc(100vh - 60px);
+  padding: 2rem 1rem;
+}
+
+.card {
+  border-radius: 1rem;
+  background: #fff;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  font-size: 0.95rem;
+}
+
+.table th {
+  background-color: #d0bfff;
+  color: #3c096c;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.btn-outline-danger {
+  min-width: 90px;
+  border-color: #b5179e;
+  color: #b5179e;
+}
+
+.btn-outline-danger:hover {
+  background-color: #b5179e;
+  color: #fff;
+}
+
+h2 svg {
+  color: #560bad;
+}
+
+.dashboard .badge {
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,47 @@
+.container {
+  background: #f9f9f9; /* fondo neutro */
+  min-height: calc(100vh - 60px);
+  padding: 2rem 1rem;
+}
+
+.card {
+  border-radius: 1rem;
+  background: linear-gradient(to bottom, #e0c3fc, #8ec5fc); /* lila a azul */
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 svg {
+  color: #7209b7; /* lila fuerte */
+}
+
+.form-label {
+  font-weight: bold;
+  color: #560bad; /* lila oscuro */
+}
+
+input, .form-control {
+  border-radius: 8px;
+  border: 1px solid #cdb4db; 
+  padding: 0.6rem;
+}
+
+input:focus, .form-control:focus {
+  border-color: #7209b7;
+  box-shadow: 0 0 5px rgba(114, 9, 183, 0.3);
+  outline: none;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #7209b7, #560bad);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to right, #560bad, #3f0071);
+}

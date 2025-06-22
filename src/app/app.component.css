@@ -1,0 +1,17 @@
+.main-layout {
+  display: flex;
+  flex-direction: column; /* Para que el navbar quede arriba y el contenido debajo */
+  min-height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  z-index: 1000; /* Asegura que el navbar esté encima si hay elementos flotantes */
+}
+
+.main-content {
+  flex-grow: 1; /* Ocupa todo el espacio disponible debajo del navbar */
+  padding: 2rem; /* Espacio interno para el contenido */
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* O el color que prefieras para el fondo */
+}

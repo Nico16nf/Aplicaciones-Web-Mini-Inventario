@@ -1,0 +1,45 @@
+<div class="container py-3">
+  <div class="card shadow-lg border-0">
+    <div class="card-body">
+      <h2 class="text-center mb-4 d-flex align-items-center justify-content-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-plus-fill text-primary" viewBox="0 0 16 16">
+          <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm11-4a3 3 0 1 0-6 0 3 3 0 0 0 6 0zM11 5V3.5a.5.5 0 0 1 1 0V5h1.5a.5.5 0 0 1 0 1H12v1.5a.5.5 0 0 1-1 0V6h-1.5a.5.5 0 0 1 0-1H11z"/>
+        </svg>
+        Agregar Proveedor
+      </h2>
+
+      <form [formGroup]="proveedorForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label class="form-label">Nombre</label>
+          <input type="text" formControlName="nombre" class="form-control" placeholder="Nombre del proveedor">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">RUC</label>
+          <input type="text" formControlName="ruc" class="form-control" placeholder="RUC del proveedor">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Teléfono</label>
+          <input type="text" formControlName="telefono" class="form-control" placeholder="Teléfono del proveedor">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" formControlName="email" class="form-control" placeholder="Correo electrónico del proveedor">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Dirección</label>
+          <input type="text" formControlName="direccion" class="form-control" placeholder="Dirección del proveedor">
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary w-100" [disabled]="proveedorForm.invalid">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

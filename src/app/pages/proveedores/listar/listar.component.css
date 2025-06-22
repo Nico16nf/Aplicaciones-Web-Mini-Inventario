@@ -1,0 +1,60 @@
+.table {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+thead th {
+  background: linear-gradient(to right, #b5179e, #7209b7); /* degradado lila */
+  color: white;
+  text-align: center;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f3e8ff; /* lila clarito al pasar el mouse */
+}
+
+td {
+  vertical-align: middle;
+}
+
+.btn-outline-danger {
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-color: #b5179e;
+  color: #b5179e;
+}
+
+.btn-outline-danger:hover {
+  background-color: #b5179e;
+  color: white;
+}
+
+.card {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc); /* degradado lila a azul */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #5a189a; /* lila profundo */
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+}
+
+button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button i {
+  margin-right: 0.25rem;
+}

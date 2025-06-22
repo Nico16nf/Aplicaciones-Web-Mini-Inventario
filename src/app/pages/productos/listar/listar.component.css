@@ -1,0 +1,91 @@
+.container {
+  background: #f9f9f9;
+  min-height: calc(100vh - 60px);
+  padding: 2rem 1rem;
+}
+
+.card {
+  border-radius: 1rem;
+  background: linear-gradient(to bottom, #e0c3fc, #8ec5fc);
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+h2 svg {
+  color: #560bad;
+}
+
+h2 {
+  color: #560bad;
+  font-weight: 600;
+}
+
+.table th {
+  background-color: #d0bfff;
+  color: #3c096c;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f3e8ff; 
+}
+
+.btn-outline-primary {
+  min-width: 90px;
+  border-color: #7209b7;
+  color: #7209b7;
+}
+
+.btn-outline-primary:hover {
+  background-color: #7209b7;
+  color: #fff;
+}
+
+.btn-outline-danger {
+  min-width: 90px;
+  border-color: #b5179e;
+  color: #b5179e;
+}
+
+.btn-outline-danger:hover {
+  background-color: #b5179e;
+  color: #fff;
+}
+
+.filtro-input {
+  border: 1px solid #b5179e;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.filtro-input:focus {
+  border-color: #7209b7;
+  box-shadow: 0 0 5px rgba(114, 9, 183, 0.3);
+  outline: none;
+}
+
+.filtro-btn {
+  border-color: #560bad;
+  color: #560bad;
+}
+
+.filtro-btn:hover {
+  background-color: #560bad;
+  color: #fff;
+}
+
+
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.85rem;
+  }
+  .filtro-input {
+    font-size: 0.85rem;
+  }
+}

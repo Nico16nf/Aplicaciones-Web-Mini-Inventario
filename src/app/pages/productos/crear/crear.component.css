@@ -1,0 +1,76 @@
+.container {
+  max-width: 1000px; /* Más ancho */
+  margin: 2rem auto;
+  padding: 3rem; /* Más padding */
+  background: linear-gradient(to bottom, hsla(220, 80%, 98%, 1), hsla(270, 70%, 97%, 1));
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: hsla(220, 70%, 35%, 1);
+  margin-bottom: 2rem;
+  font-size: 2.2rem; /* Título más grande */
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2.5rem; /* Mayor separación */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  color: hsla(220, 60%, 30%, 1);
+  margin-bottom: 0.5rem; /* Más separación del label */
+  font-size: 1.1rem; /* Label más grande */
+}
+
+input,
+select,
+textarea {
+  padding: 0.8rem 1rem; /* Inputs más altos */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.1rem; /* Texto más grande */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: hsla(220, 70%, 50%, 1);
+  box-shadow: 0 0 6px hsla(220, 70%, 50%, 0.4);
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.btn-submit {
+  padding: 1rem 2rem; /* Botón más grande */
+  background: hsla(220, 70%, 50%, 1);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem; /* Texto del botón más grande */
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-submit:hover {
+  background: hsla(220, 70%, 40%, 1);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+}

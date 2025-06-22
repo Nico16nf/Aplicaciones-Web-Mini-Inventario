@@ -1,0 +1,39 @@
+.custom-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc); /* lila a azul degradado */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 2rem;
+  color: #5a189a; /* un lila profundo */
+}
+
+.form-label {
+  color: #3c096c; /* lila oscuro para los labels */
+}
+
+.form-control-lg {
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #b5179e;
+  border-radius: 0.5rem;
+}
+
+.form-control-lg:focus {
+  border-color: #7209b7;
+  box-shadow: 0 0 5px rgba(114, 9, 183, 0.5);
+}
+
+button.btn-lg {
+  font-size: 1.2rem;
+  background-color: #560bad;
+  border: none;
+}
+
+button.btn-lg:hover {
+  background-color: #3f0071;
+}

@@ -1,0 +1,55 @@
+<div class="container py-4">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h2 class="text-center mb-4 text-primary d-flex align-items-center justify-content-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+          <path d="M6.364 0a1 1 0 0 0-.553.166l-5 3.333A1 1 0 0 0 0 4.333v7.334a1 1 0 0 0 .447.834l5 3.333a1 1 0 0 0 1.106 0l5-3.333a1 1 0 0 0 .447-.834V4.333a1 1 0 0 0-.447-.834l-5-3.333A1 1 0 0 0 6.364 0zm4.95 4.4L8 6.867 4.686 4.4 8 1.933l3.314 2.467zM1 5.3l4 2.667v5.4L1 10.7V5.3zm5 8.733v-5.4l4-2.667v5.4l-4 2.667zm5-3.333V7.967l4-2.667v5.4l-4 2.667v-5.4z"/>
+        </svg>
+        Agregar Producto
+      </h2>
+
+      <form (ngSubmit)="crearProducto()" #productoForm="ngForm">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" id="nombre" class="form-control" [(ngModel)]="producto.nombre" name="nombre" placeholder="Ej: Leche Gloria" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripción</label>
+          <textarea id="descripcion" class="form-control" [(ngModel)]="producto.descripcion" name="descripcion" rows="3" placeholder="Ej: Lata de leche evaporada 400ml"></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="precioCompra" class="form-label">Precio Compra</label>
+            <input type="number" step="0.01" id="precioCompra" class="form-control" [(ngModel)]="producto.precioCompra" name="precioCompra" placeholder="Ej: 2.50" required>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="precioVenta" class="form-label">Precio Venta</label>
+            <input type="number" step="0.01" id="precioVenta" class="form-control" [(ngModel)]="producto.precioVenta" name="precioVenta" placeholder="Ej: 3.00" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="stock" class="form-label">Stock</label>
+          <input type="number" id="stock" class="form-control" [(ngModel)]="producto.stock" name="stock" placeholder="Ej: 100" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="categoriaId" class="form-label">ID Categoría</label>
+          <input type="number" id="categoriaId" class="form-control" [(ngModel)]="producto.categoriaId" name="categoriaId" placeholder="Ej: 1" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="proveedorId" class="form-label">ID Proveedor</label>
+          <input type="number" id="proveedorId" class="form-control" [(ngModel)]="producto.proveedorId" name="proveedorId" placeholder="Ej: 5" required>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" [disabled]="productoForm.invalid">Agregar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
